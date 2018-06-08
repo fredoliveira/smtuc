@@ -10,18 +10,30 @@ Either build the gem from the source code (see below), or install it via rubygem
 gem install smtuc
 ```
 
-## Building the gem from source
+## Working with the gem source code
 
 To build a new version of the gem:
 
 ```
-gem build smtuc.gemspec
+rake build
 ```
 
 You can then install it:
 
 ```
-gem install smtuc-<VERSION>.gem
+rake install
+```
+
+If you built a new version of the gem and want to push it to [Rubygems.org](http://rubygems.org). This will automatically tag the source code according to the new version and create a new release on github.
+
+```
+rake release
+```
+
+See all other available rake tasks by running:
+
+```
+rake --tasks
 ```
 
 ## Using the gem
