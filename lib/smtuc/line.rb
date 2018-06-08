@@ -1,9 +1,3 @@
-# Load bundle gems
-require 'rubygems'
-require 'bundler/setup'
-require 'faraday'
-require 'json'
-
 module SMTUC
   class Line
     attr_accessor :id, :description, :directions
@@ -73,6 +67,3 @@ module SMTUC
     end
   end
 end
-
-puts SMTUC::Line.all.inspect
-puts SMTUC::Line.find('7T').inspect
