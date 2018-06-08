@@ -50,6 +50,13 @@ SMTUC::Line.all
 
 # Get information on a specific line
 SMTUC::Line.find '7T'
+
+```
+
+Alternatively, if working with the source code, you can open a console with the gem already loaded
+
+```
+bin/console
 ```
 
 ## Want to contribute? Here's a TODO list of pending things
