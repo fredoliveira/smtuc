@@ -24,13 +24,17 @@ You can then install it:
 rake install
 ```
 
-If you built a new version of the gem and want to push it to [Rubygems.org](http://rubygems.org). This will automatically tag the source code according to the new version and create a new release on github.
+If you built a new version of the gem and want to push it to [rubygems.org](http://rubygems.org) use `rake release`. This will automatically tag the source code according to the new version and create a new release on github.
 
 ```
-rake release
+$ rake release
+smtuc 0.0.3 built to pkg/smtuc-0.0.3.gem.
+Tagged v0.0.3.
+Pushed git commits and tags.
+Pushed smtuc 0.0.3 to rubygems.org
 ```
 
-See all other available rake tasks by running:
+See all other available rake tasks`:
 
 ```
 rake --tasks
