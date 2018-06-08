@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'faraday'
 require 'json'
 
-module SMTUC
-  require 'smtuc/line'
+class SMTUC
 end
+
+require 'smtuc/line'
