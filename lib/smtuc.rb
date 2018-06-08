@@ -8,3 +8,4 @@ class SMTUC
 end
 
 require 'smtuc/line'
+require 'smtuc/stop'
