@@ -1,6 +1,6 @@
 # SMTUC 🚌
 
-An unofficial gem built on top of an unofficial API.
+An unofficial gem built on top of an unofficial API. For more information about the API used here and its available methods, see [sdsantos/smtuc-api](https://github.com/sdsantos/smtuc-api). Feel free to add to this and send in your pull requests.
 
 ## Installing the gem
 
