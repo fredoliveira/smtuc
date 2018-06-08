@@ -5,6 +5,7 @@ require 'faraday'
 require 'json'
 
 class SMTUC
+  BASE_API_URL = 'http://coimbra.move-me.mobi'.freeze
 end
 
 require 'smtuc/line'

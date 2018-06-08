@@ -2,7 +2,7 @@ class SMTUC
   class Line
     attr_accessor :id, :description, :directions
 
-    API_URL = 'http://coimbra.move-me.mobi/Lines'.freeze
+    API_URL = "#{BASE_API_URL}/Lines".freeze
 
     # Directions are returned in a funky format that makes little sense, but
     # looks like: 'R§Volta§Tovim - Est. Nova'
