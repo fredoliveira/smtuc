@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "smtuc"
+require 'bundler/setup'
+require 'smtuc'
 
-require "irb"
+require 'irb'
 IRB.start(__FILE__)
