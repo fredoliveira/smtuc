@@ -26,26 +26,41 @@ class SMTUC
     # Returns a list of all known stops
     def self.all
       response = Faraday.get(API_URL + '/GetStops?oLat=40.20343598944182&oLon=-8.417298279776674&meters=99999999999')
-      lines = JSON.parse(response.body)
-      lines.map { |line| new(line) }
+      JSON.parse(response.body).map { |stop| new(stop) }
+    end
+
+    # Returns a list of stops around a specific latitude and longitude.
+    # A radius can be specified. If it is not, it falls back to a default of 200m.
+    def self.by_location(lat, lon, radius = 200)
+      response = Faraday.get(API_URL + "/GetStops?oLat=#{lat}&oLon=#{lon}&meters=#{radius}")
+      JSON.parse(response.body).map { |stop| new(stop) }
     end
 
     def arrivals
       response = Faraday.get(BASE_API_URL + '/NextArrivals/GetScheds?providerName=SMTUC&stopCode=SMTUC_' + id)
-      lines = JSON.parse(response.body)
+      arrivals = JSON.parse(response.body)
 
       # Response is normally an array that looks like this:
-      # [
-      #   {"Key"=>1, "Value"=>["36", "Pr. República", "19"]},
-      #   {"Key"=>2, "Value"=>["25T", "Beira Rio", "24"]}
-      # ]
+      #
+      #   [
+      #     {"Key"=>1, "Value"=>["36", "Pr. República", "19"]},
+      #     {"Key"=>2, "Value"=>["25T", "Beira Rio", "24"]}
+      #   ]
       #
       # We map that to something a little friendlier that looks like this:
-      lines.map do |l|
+      #
+      #   [
+      #     {
+      #       line: "36",
+      #       description: "Pr. República",
+      #       minutes: 19
+      #     }, (...)
+      #   ]
+      arrivals.map do |l|
         {
           line: l['Value'][0],
           description: l['Value'][1],
-          minutes: l['Value'][2]
+          minutes: l['Value'][2].to_i
         }
       end
     end

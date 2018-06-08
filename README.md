@@ -47,13 +47,22 @@ rake --tasks
 require 'smtuc'
 
 # Get all the known stops
-SMTUC::Stop.all
+all_stops = SMTUC::Stop.all
+
+# Get information on a specific stop
+stop = SMTUC::Stop.find '1402'
+
+# And a stop's next arrivals
+stop.arrivals
+
+# Find a stop by location
+stop = SMTUC::Stop.by_location(40.25532913208008, -8.433822631835938, 100)
 
 # Get all the known lines
-SMTUC::Line.all
+lines = SMTUC::Line.all
 
 # Get information on a specific line
-SMTUC::Line.find '7T'
+line = SMTUC::Line.find '7T'
 ```
 
 Alternatively, if working with the source code, you can open a console with the gem already loaded
@@ -77,7 +86,6 @@ irb(main):001:0> SMTUC::Stop.all
 ### Updates to `SMTUC::Stop`
 
 * Search stops by keyword
-* Search stops by lat/lon and search radius
 
 ### Create `SMTUC::GTFS`
 
