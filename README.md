@@ -39,3 +39,19 @@ SMTUC::Line.all
 # Get information on a specific line
 SMTUC::Line.find '7T'
 ```
+
+## TODO
+
+### `SMTUC::Line`
+
+* Implement a function that retuns a specific line's schedule ([See reference by sdsantos](https://github.com/sdsantos/smtuc-api#horário-de-linha))
+
+### `SMTUC::Stop`
+
+* Search stops by keyword
+* Search stops by lat/lon and search radius
+* Realtime stop schedule
+
+### `SMTUC::GTFS`
+
+* Implement an export function that creates a GTFS-ready "feed"
