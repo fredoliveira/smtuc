@@ -78,7 +78,6 @@ irb(main):001:0> SMTUC::Stop.all
 
 * Search stops by keyword
 * Search stops by lat/lon and search radius
-* Realtime stop schedule
 
 ### Create `SMTUC::GTFS`
 
