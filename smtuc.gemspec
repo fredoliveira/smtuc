@@ -1,6 +1,10 @@
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "smtuc/version"
+
 Gem::Specification.new do |s|
   s.name          = 'smtuc'
-  s.version       = '0.0.2'
+  s.version       = SMTUC::VERSION
   s.date          = '2018-06-08'
 
   s.summary       = 'SMTUC, the gem!'
@@ -12,4 +16,10 @@ Gem::Specification.new do |s|
 
   s.files         = ['lib/smtuc.rb', 'lib/smtuc/line.rb', 'lib/smtuc/stop.rb']
   s.require_paths = ['lib']
+
+  s.add_runtime_dependency "faraday", "~> 0.11.0"
+
+  s.add_development_dependency "bundler", "~> 1.16"
+  s.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "minitest", "~> 5.0"
 end
